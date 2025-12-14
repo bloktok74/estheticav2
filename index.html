@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esthetica — Top Plastic Surgeon Orange County</title>
+    <meta name="description" content="Premier plastic surgery and medical aesthetics in Newport Beach, Orange County. Board-certified surgeons, world-class results. Book your consultation today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <style>
+        :root {
+            --font-inter: 'Inter', sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+        body {
+            font-family: var(--font-inter);
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Border Gradient Utility */
+        .border-gradient {
+            position: relative;
+        }
+        .border-gradient::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0; 
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* iframe fade in */
+        iframe {
+            animation: fadeIn 2s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Modal Transitions */
+        .modal-enter { opacity: 0; transform: scale(0.95); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: opacity 0.3s ease-out, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .modal-exit { opacity: 1; transform: scale(1); }
+        .modal-exit-active { opacity: 0; transform: scale(0.95); transition: opacity 0.2s ease-in, transform 0.2s ease-in; }
+        
+        /* Custom Select Arrow */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .dropdown-menu.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Mobile-specific fixes */
+        @media (max-width: 768px) {
+            .spline-container {
+                height: 100vh;
+                width: 100vw;
+            }
+            
+            .spline-container iframe {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        violet: {
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            900: '#4c1d95',
+                            950: '#2e1065',
+                        }
+                    },
+                    letterSpacing: {
+                        tighter: '-0.04em',
+                        tight: '-0.02em',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-violet-500/30">
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-[-1] bg-[#050505]">
+        <div class="spline-container absolute top-0 left-0 w-full h-full -z-10">
+            <iframe src="https://my.spline.design/liquidring-PGc8zQXZyDUpVFvWNgohNZnv" frameborder="0" width="100%" height="100%" id="aura-spline"></iframe>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#050505] pointer-events-none"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/20 backdrop-blur-xl animate-fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center">
+                    <span class="iconify text-white" data-icon="lucide:sparkles" data-width="18" data-inline="false"></span>
+                </div>
+                <span class="text-base font-medium tracking-tight text-white">Esthetica</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-1">
+                <!-- About Dropdown -->
+                <div class="relative dropdown">
+                    <button class="flex items-center gap-1 px-3 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-lg hover:bg-white/5">
+                        About
+                        <span class="iconify" data-icon="lucide:chevron-down" data-width="14"></span>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 rounded-xl border border-white/10 bg-neutral-900/95 backdrop-blur-xl p-2 shadow-2xl">
+                        <a href="about.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">About Us</a>
+                        <a href="dr-kouli.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Dr. Wael Kouli</a>
+                        <a href="our-team.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Our Team</a>
+                        <a href="our-practice.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Our Practice</a>
+                        <a href="our-philosophy.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Our Philosophy</a>
+                        <a href="reviews.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Reviews</a>
+                        <a href="financing.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Financing</a>
+                        <a href="specials.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Specials</a>
+                        <a href="blog.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Blog</a>
+                    </div>
+                </div>
+
+                <!-- Procedures Dropdown -->
+                <div class="relative dropdown">
+                    <button class="flex items-center gap-1 px-3 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-lg hover:bg-white/5">
+                        Procedures
+                        <span class="iconify" data-icon="lucide:chevron-down" data-width="14"></span>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-72 rounded-xl border border-white/10 bg-neutral-900/95 backdrop-blur-xl p-3 shadow-2xl">
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <div class="px-3 py-1.5 text-xs font-medium text-violet-400 uppercase tracking-wider">Breast</div>
+                                <a href="breast-augmentation.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Breast Augmentation</a>
+                                <a href="breast-lift.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Breast Lift</a>
+                                <a href="breast-reduction.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Breast Reduction</a>
+                                <div class="px-3 py-1.5 text-xs font-medium text-violet-400 uppercase tracking-wider mt-2">Face</div>
+                                <a href="facelift.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Facelift</a>
+                                <a href="rhinoplasty.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Rhinoplasty</a>
+                                <a href="brow-lift.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Brow Lift</a>
+                                <a href="buccal-fat-removal.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Buccal Fat Removal</a>
+                            </div>
+                            <div>
+                                <div class="px-3 py-1.5 text-xs font-medium text-violet-400 uppercase tracking-wider">Body</div>
+                                <a href="liposuction.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Liposuction</a>
+                                <a href="tummy-tuck.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Tummy Tuck</a>
+                                <a href="mommy-makeover.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Mommy Makeover</a>
+                                <a href="brazilian-butt-lift.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Brazilian Butt Lift</a>
+                                <div class="px-3 py-1.5 text-xs font-medium text-violet-400 uppercase tracking-wider mt-2">MedSpa</div>
+                                <a href="injectables.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Injectables</a>
+                                <a href="laser-treatments.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Laser Treatments</a>
+                            </div>
+                        </div>
+                        <div class="mt-2 pt-2 border-t border-white/10">
+                            <a href="procedures.html" class="block px-3 py-2 text-sm text-violet-400 hover:text-violet-300 font-medium rounded-lg transition-colors">
+                                View All Procedures →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="gallery.html" class="px-3 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-lg hover:bg-white/5">Gallery</a>
+                <a href="contact.html" class="px-3 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-lg hover:bg-white/5">Contact</a>
+            </nav>
+
+            <!-- Right Side Actions -->
+            <div class="flex items-center gap-3">
+                <a href="tel:9497211113" class="hidden sm:flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition-colors font-medium">
+                    <span class="iconify" data-icon="lucide:phone" data-width="14"></span>
+                    <span class="hidden md:inline">(949) 721-1113</span>
+                </a>
+                <button onclick="toggleModal(true)" class="inline-flex h-8 items-center justify-center rounded-full bg-white px-4 text-xs font-medium text-black transition hover:bg-neutral-200">
+                    Book Now
+                </button>
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-white hover:bg-white/10 transition">
+                    <span class="iconify" data-icon="lucide:menu" data-width="18"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-full bg-neutral-900 border-l border-white/10 z-[60] lg:hidden overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center">
+                        <span class="iconify text-white" data-icon="lucide:sparkles" data-width="18"></span>
+                    </div>
+                    <span class="text-base font-medium text-white">Esthetica</span>
+                </div>
+                <button onclick="toggleMobileMenu()" class="text-neutral-400 hover:text-white transition">
+                    <span class="iconify" data-icon="lucide:x" data-width="20"></span>
+                </button>
+            </div>
+
+            <nav class="space-y-6">
+                <div>
+                    <div class="text-xs font-medium text-violet-400 uppercase tracking-wider mb-3">About</div>
+                    <div class="space-y-1">
+                        <a href="about.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">About Us</a>
+                        <a href="dr-kouli.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Dr. Wael Kouli</a>
+                        <a href="our-team.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Our Team</a>
+                        <a href="reviews.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Reviews</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-xs font-medium text-violet-400 uppercase tracking-wider mb-3">Procedures</div>
+                    <div class="space-y-1">
+                        <a href="breast-augmentation.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Breast Augmentation</a>
+                        <a href="facelift.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Facelift</a>
+                        <a href="rhinoplasty.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Rhinoplasty</a>
+                        <a href="mommy-makeover.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Mommy Makeover</a>
+                        <a href="procedures.html" class="block px-3 py-2 text-sm text-violet-400 hover:text-violet-300 font-medium rounded-lg transition">View All →</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-xs font-medium text-violet-400 uppercase tracking-wider mb-3">Visit</div>
+                    <div class="space-y-1">
+                        <a href="gallery.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Gallery</a>
+                        <a href="contact.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Contact</a>
+                        <a href="blog.html" class="block px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition">Blog</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="mt-8 pt-8 border-t border-white/10">
+                <a href="tel:9497211113" class="flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition mb-4">
+                    <span class="iconify" data-icon="lucide:phone" data-width="16"></span>
+                    (949) 721-1113
+                </a>
+                <p class="text-xs text-neutral-500">360 San Miguel Drive, Suite 207<br>Newport Beach, CA 92660</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="mobile-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] hidden lg:hidden" onclick="toggleMobileMenu()"></div>
+
+    <main class="pt-24 pb-16 relative z-10">
+        
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-16 sm:pb-20 text-center">
+            
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 mb-6 sm:mb-8 animate-fade-up delay-100 backdrop-blur-sm shadow-[0_0_15px_rgba(0,0,0,0.5)] max-w-full">
+                <span class="relative flex h-2 w-2 flex-shrink-0">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+                </span>
+                <span class="font-medium text-[11px] sm:text-xs truncate">Voted #1 in Newport Beach</span>
+                <span class="h-3 w-px bg-white/10 mx-1 hidden sm:block"></span>
+                <a href="reviews.html" class="hidden sm:flex items-center gap-1 hover:text-white transition-colors flex-shrink-0">
+                    View Awards <span class="iconify" data-icon="lucide:arrow-right" data-width="12"></span>
+                </a>
+            </div>
+
+            <h1 class="mx-auto max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-white mb-6 animate-fade-up delay-200 leading-[1.1] drop-shadow-2xl px-4">
+                Refine your natural beauty 
+                <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">with medical precision.</span>
+            </h1>
+
+            <p class="mx-auto max-w-2xl text-base sm:text-lg text-neutral-400 mb-8 sm:mb-10 animate-fade-up delay-300 font-light leading-relaxed drop-shadow-lg px-4">
+                Premier plastic surgery and medical aesthetics in Orange County. Experience world-class artistry, advanced technology, and personalized care.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-up delay-300 px-4">
+                <button onclick="toggleModal(true)" class="w-full sm:w-auto h-10 px-6 rounded-full bg-white text-black text-sm font-medium hover:bg-neutral-200 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    Book Consultation
+                    <span class="iconify" data-icon="lucide:calendar-check" data-width="16"></span>
+                </button>
+                <a href="gallery.html" class="w-full sm:w-auto h-10 px-6 rounded-full border-gradient bg-white/5 backdrop-blur-sm text-white text-sm font-medium hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                    <span class="iconify" data-icon="lucide:image" data-width="16"></span>
+                    Patient Gallery
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Procedures Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-24 animate-fade-up delay-300">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Breast Augmentation -->
+                <a href="breast-augmentation.html" class="relative group w-full h-[240px] rounded-3xl border-gradient bg-neutral-900/60 p-6 sm:p-8 flex flex-col justify-between hover:bg-neutral-800/60 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md cursor-pointer overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center group-hover:bg-violet-500 group-hover:text-white transition-colors duration-500 flex-shrink-0">
+                        <span class="iconify text-violet-400 group-hover:text-white transition-colors" data-icon="lucide:heart-handshake" data-width="24"></span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-medium text-white mb-2 tracking-tight">Breast Augmentation</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">Restore volume and symmetry with our signature natural profile.</p>
+                    </div>
+                    <div class="absolute inset-0 border border-white/0 group-hover:border-white/10 rounded-3xl transition-colors duration-500 pointer-events-none"></div>
+                </a>
+
+                <!-- Mommy Makeover -->
+                <a href="mommy-makeover.html" class="relative group w-full h-[240px] rounded-3xl border-gradient bg-neutral-900/60 p-6 sm:p-8 flex flex-col justify-between hover:bg-neutral-800/60 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md cursor-pointer overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center group-hover:bg-violet-500 group-hover:text-white transition-colors duration-500 flex-shrink-0">
+                        <span class="iconify text-violet-400 group-hover:text-white transition-colors" data-icon="lucide:sparkles" data-width="24"></span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-medium text-white mb-2 tracking-tight">Mommy Makeover</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">Comprehensive restoration combining breast and body procedures.</p>
+                    </div>
+                    <div class="absolute inset-0 border border-white/0 group-hover:border-white/10 rounded-3xl transition-colors duration-500 pointer-events-none"></div>
+                </a>
+
+                <!-- Facelift -->
+                <a href="facelift.html" class="relative group w-full h-[240px] rounded-3xl border-gradient bg-neutral-900/60 p-6 sm:p-8 flex flex-col justify-between hover:bg-neutral-800/60 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md cursor-pointer overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center group-hover:bg-violet-500 group-hover:text-white transition-colors duration-500 flex-shrink-0">
+                        <span class="iconify text-violet-400 group-hover:text-white transition-colors" data-icon="lucide:smile" data-width="24"></span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-medium text-white mb-2 tracking-tight">Facelift</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">Turn back time with deep-plane techniques for lasting youth.</p>
+                    </div>
+                    <div class="absolute inset-0 border border-white/0 group-hover:border-white/10 rounded-3xl transition-colors duration-500 pointer-events-none"></div>
+                </a>
+
+                <!-- Brow Lift -->
+                <a href="brow-lift.html" class="relative group w-full h-[240px] rounded-3xl border-gradient bg-neutral-900/60 p-6 sm:p-8 flex flex-col justify-between hover:bg-neutral-800/60 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md cursor-pointer overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center group-hover:bg-violet-500 group-hover:text-white transition-colors duration-500 flex-shrink-0">
+                        <span class="iconify text-violet-400 group-hover:text-white transition-colors" data-icon="lucide:arrow-up-circle" data-width="24"></span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-medium text-white mb-2 tracking-tight">Brow Lift</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">Refresh the upper face and open the eyes subtly.</p>
+                    </div>
+                    <div class="absolute inset-0 border border-white/0 group-hover:border-white/10 rounded-3xl transition-colors duration-500 pointer-events-none"></div>
+                </a>
+
+                <!-- Body Contouring -->
+                <a href="liposuction.html" class="relative group w-full h-[240px] rounded-3xl border-gradient bg-neutral-900/60 p-6 sm:p-8 flex flex-col justify-between hover:bg-neutral-800/60 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md cursor-pointer overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center group-hover:bg-violet-500 group-hover:text-white transition-colors duration-500 flex-shrink-0">
+                        <span class="iconify text-violet-400 group-hover:text-white transition-colors" data-icon="lucide:activity" data-width="24"></span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-medium text-white mb-2 tracking-tight">Body Contouring</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">Sculpt your ideal silhouette with advanced liposuction.</p>
+                    </div>
+                    <div class="absolute inset-0 border border-white/0 group-hover:border-white/10 rounded-3xl transition-colors duration-500 pointer-events-none"></div>
+                </a>
+
+                <!-- Rhinoplasty -->
+                <a href="rhinoplasty.html" class="relative group w-full h-[240px] rounded-3xl border-gradient bg-neutral-900/60 p-6 sm:p-8 flex flex-col justify-between hover:bg-neutral-800/60 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md cursor-pointer overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center group-hover:bg-violet-500 group-hover:text-white transition-colors duration-500 flex-shrink-0">
+                        <span class="iconify text-violet-400 group-hover:text-white transition-colors" data-icon="lucide:wind" data-width="24"></span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-medium text-white mb-2 tracking-tight">Rhinoplasty</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">Balance and harmony for your facial features.</p>
+                    </div>
+                    <div class="absolute inset-0 border border-white/0 group-hover:border-white/10 rounded-3xl transition-colors duration-500 pointer-events-none"></div>
+                </a>
+
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="procedures.html" class="inline-flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300 font-medium transition">
+                    View All Procedures
+                    <span class="iconify" data-icon="lucide:arrow-right" data-width="16"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[300px] sm:h-[400px] bg-violet-900/10 blur-[100px] rounded-full -z-10"></div>
+            
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl text-white font-medium tracking-tighter mb-4">Patient Stories</h2>
+                <p class="text-neutral-400 text-sm sm:text-base">Real results from real people in Newport Beach.</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto bg-neutral-900/40 border-gradient rounded-3xl p-6 sm:p-8 lg:p-12 text-center backdrop-blur-md">
+                <span class="iconify text-violet-500/20 mx-auto mb-6" data-icon="lucide:quote" data-width="48"></span>
+                
+                <div id="testimonial-container" class="min-h-[160px] flex flex-col justify-center">
+                    <p id="quote-text" class="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-light tracking-tight leading-relaxed transition-opacity duration-300">
+                        "Esthetica changed my life. The team made me feel so comfortable, and my results are completely natural. I finally have the confidence I always wanted."
+                    </p>
+                    <div id="quote-author" class="mt-6 transition-opacity duration-300">
+                        <p class="text-white font-medium text-sm">Jessica M.</p>
+                        <p class="text-neutral-500 text-xs mt-0.5">Rhinoplasty Patient</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-3 mt-10">
+                    <button class="t-btn w-10 h-10 rounded-full overflow-hidden border-2 border-violet-500 transition-all opacity-100 flex-shrink-0" 
+                            data-quote="Esthetica changed my life. The team made me feel so comfortable, and my results are completely natural. I finally have the confidence I always wanted." 
+                            data-author="Jessica M." data-role="Rhinoplasty Patient">
+                        <img src="https://i.pravatar.cc/150?u=5" class="w-full h-full object-cover" alt="Patient testimonial">
+                    </button>
+                    <button class="t-btn w-10 h-10 rounded-full overflow-hidden border-2 border-transparent opacity-50 hover:opacity-100 transition-all flex-shrink-0" 
+                            data-quote="The facility is stunning and the staff is incredibly professional. My recovery was faster than expected thanks to their protocol." 
+                            data-author="Sarah K." data-role="Breast Augmentation">
+                        <img src="https://i.pravatar.cc/150?u=9" class="w-full h-full object-cover" alt="Patient testimonial">
+                    </button>
+                    <button class="t-btn w-10 h-10 rounded-full overflow-hidden border-2 border-transparent opacity-50 hover:opacity-100 transition-all flex-shrink-0" 
+                            data-quote="I've been to many MedSpas in OC, but the attention to detail here is unmatched. Dr. Kouli is a true artist with fillers." 
+                            data-author="Amanda L." data-role="MedSpa Client">
+                        <img src="https://i.pravatar.cc/150?u=23" class="w-full h-full object-cover" alt="Patient testimonial">
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="reviews.html" class="inline-flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300 font-medium transition">
+                    Read More Reviews
+                    <span class="iconify" data-icon="lucide:arrow-right" data-width="16"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Steps Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-white/5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 rounded-full bg-violet-500/10 px-3 py-1 text-xs text-violet-300 mb-6 font-medium">
+                        The Patient Journey
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl text-white font-medium tracking-tighter mb-6 leading-[1.1]">
+                        From consultation to confident results.
+                    </h2>
+                    <p class="text-neutral-400 text-base mb-8 leading-relaxed">
+                        We understand that surgery is a big decision. Our streamlined process ensures you feel supported every step of the way.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center border border-white/10 text-white text-sm font-medium">1</div>
+                            <div>
+                                <h4 class="text-white font-medium text-base">Private Consultation</h4>
+                                <p class="text-sm text-neutral-400 mt-1">Meet with our surgeons to discuss your goals and receive a custom surgical plan.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center border border-white/10 text-white text-sm font-medium">2</div>
+                            <div>
+                                <h4 class="text-white font-medium text-base">The Procedure</h4>
+                                <p class="text-sm text-neutral-400 mt-1">Performed in our state-of-the-art accredited surgical center with top anesthesiologists.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center border border-white/10 text-white text-sm font-medium">3</div>
+                            <div>
+                                <h4 class="text-white font-medium text-base">Recovery & Aftercare</h4>
+                                <p class="text-sm text-neutral-400 mt-1">Continuous monitoring and follow-up appointments to ensure perfect healing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-violet-500/20 to-purple-500/20 rounded-[2rem] blur-2xl opacity-50"></div>
+                    <div class="relative rounded-[2rem] border-gradient bg-neutral-900 overflow-hidden shadow-2xl">
+                        <div class="h-8 bg-black/50 border-b border-white/5 flex items-center px-4 gap-2">
+                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-600"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-600"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-600"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-3">
+                                <div class="h-2 w-1/3 bg-neutral-800 rounded"></div>
+                                <div class="h-2 w-2/3 bg-neutral-800 rounded"></div>
+                                <div class="h-32 w-full bg-neutral-800/50 border border-white/5 rounded-xl flex items-center justify-center overflow-hidden relative">
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-violet-900/10 to-transparent"></div>
+                                    <span class="iconify text-neutral-700" data-icon="lucide:user" data-width="64"></span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-3 pt-2">
+                                    <div class="h-16 rounded-lg bg-neutral-800/50 border border-white/5 flex flex-col items-center justify-center gap-1">
+                                        <span class="iconify text-neutral-500" data-icon="lucide:calendar" data-width="16"></span>
+                                        <div class="h-1 w-8 bg-neutral-700 rounded"></div>
+                                    </div>
+                                    <div class="h-16 rounded-lg bg-neutral-800/50 border border-white/5 flex flex-col items-center justify-center gap-1">
+                                        <span class="iconify text-neutral-500" data-icon="lucide:file-text" data-width="16"></span>
+                                        <div class="h-1 w-8 bg-neutral-700 rounded"></div>
+                                    </div>
+                                    <div class="h-16 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                                        <span class="iconify text-violet-400" data-icon="lucide:check" data-width="20"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl text-white font-medium tracking-tighter mb-6">Start your transformation.</h2>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="toggleModal(true)" class="w-full sm:w-auto h-12 px-8 rounded-full bg-white text-black font-medium hover:bg-neutral-200 transition-colors">
+                    Book Consultation
+                </button>
+                <a href="contact.html" class="w-full sm:w-auto h-12 px-8 rounded-full border border-white/10 hover:bg-white/5 text-white font-medium transition-colors flex items-center justify-center">
+                    Contact Office
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 rounded bg-white flex items-center justify-center flex-shrink-0">
+                            <span class="iconify text-black" data-icon="lucide:sparkles" data-width="14"></span>
+                        </div>
+                        <span class="text-white font-medium">Esthetica</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 max-w-xs mb-4">
+                        Newport Beach's premier destination for cosmetic surgery and aesthetic medicine.
+                    </p>
+                    <div class="text-sm text-neutral-500">
+                        <p>360 San Miguel Drive, Suite 207</p>
+                        <p>Newport Beach, CA 92660</p>
+                        <a href="tel:9497211113" class="text-violet-400 hover:text-violet-300 transition mt-2 inline-block">(949) 721-1113</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-sm mb-4">Breast</h4>
+                    <ul class="space-y-2 text-sm text-neutral-500">
+                        <li><a href="breast-augmentation.html" class="hover:text-white transition-colors">Breast Augmentation</a></li>
+                        <li><a href="breast-lift.html" class="hover:text-white transition-colors">Breast Lift</a></li>
+                        <li><a href="breast-reduction.html" class="hover:text-white transition-colors">Breast Reduction</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-sm mb-4">Body</h4>
+                    <ul class="space-y-2 text-sm text-neutral-500">
+                        <li><a href="liposuction.html" class="hover:text-white transition-colors">Liposuction</a></li>
+                        <li><a href="tummy-tuck.html" class="hover:text-white transition-colors">Tummy Tuck</a></li>
+                        <li><a href="mommy-makeover.html" class="hover:text-white transition-colors">Mommy Makeover</a></li>
+                        <li><a href="brazilian-butt-lift.html" class="hover:text-white transition-colors">Brazilian Butt Lift</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-sm mb-4">Face</h4>
+                    <ul class="space-y-2 text-sm text-neutral-500">
+                        <li><a href="facelift.html" class="hover:text-white transition-colors">Facelift</a></li>
+                        <li><a href="rhinoplasty.html" class="hover:text-white transition-colors">Rhinoplasty</a></li>
+                        <li><a href="brow-lift.html" class="hover:text-white transition-colors">Brow Lift</a></li>
+                        <li><a href="buccal-fat-removal.html" class="hover:text-white transition-colors">Buccal Fat Removal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
+                <p class="text-xs text-neutral-600">© 2025 Esthetica Orange County. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/esthetica.ccs/" target="_blank" class="text-neutral-500 hover:text-white transition-colors"><span class="iconify" data-icon="lucide:instagram" data-width="16"></span></a>
+                    <a href="https://www.facebook.com/EstheticaSanDiego" target="_blank" class="text-neutral-500 hover:text-white transition-colors"><span class="iconify" data-icon="lucide:facebook" data-width="16"></span></a>
+                    <a href="https://www.youtube.com/c/Estheticasandiego" target="_blank" class="text-neutral-500 hover:text-white transition-colors"><span class="iconify" data-icon="lucide:youtube" data-width="16"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity opacity-0" onclick="toggleModal(false)"></div>
+        
+        <!-- Modal Content -->
+        <div id="modal-content" class="relative w-full max-w-lg overflow-hidden rounded-2xl border border-white/10 bg-[#0F0F0F] p-6 shadow-2xl transition-all transform scale-95 opacity-0 max-h-[90vh] overflow-y-auto">
+            
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-600 via-purple-500 to-indigo-500"></div>
+            
+            <button onclick="toggleModal(false)" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors">
+                <span class="iconify" data-icon="lucide:x" data-width="20"></span>
+            </button>
+
+            <div class="mb-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-violet-500/10 mb-4 border border-violet-500/20">
+                    <span class="iconify text-violet-400" data-icon="lucide:calendar-plus" data-width="20"></span>
+                </div>
+                <h3 class="text-xl font-medium text-white tracking-tight">Request Consultation</h3>
+                <p class="text-sm text-neutral-400 mt-1">Fill out the form below and our coordinator will contact you within 24 hours.</p>
+            </div>
+
+            <form id="consultationForm" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-medium text-neutral-300 ml-1">First Name</label>
+                        <input type="text" name="firstName" placeholder="Jane" required class="w-full bg-neutral-900/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-violet-500/50 focus:border-violet-500 transition-all placeholder:text-neutral-600">
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-medium text-neutral-300 ml-1">Last Name</label>
+                        <input type="text" name="lastName" placeholder="Doe" required class="w-full bg-neutral-900/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-violet-500/50 focus:border-violet-500 transition-all placeholder:text-neutral-600">
+                    </div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-medium text-neutral-300 ml-1">Email Address</label>
+                    <input type="email" name="email" placeholder="jane@example.com" required class="w-full bg-neutral-900/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-violet-500/50 focus:border-violet-500 transition-all placeholder:text-neutral-600">
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-medium text-neutral-300 ml-1">Phone Number</label>
+                    <input type="tel" name="phone" placeholder="(555) 000-0000" required class="w-full bg-neutral-900/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-violet-500/50 focus:border-violet-500 transition-all placeholder:text-neutral-600">
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-medium text-neutral-300 ml-1">Procedure of Interest</label>
+                    <div class="relative">
+                        <select name="procedure" class="w-full bg-neutral-900/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-violet-500/50 focus:border-violet-500 transition-all appearance-none cursor-pointer">
+                            <option value="" disabled selected>Select a procedure...</option>
+                            <option value="breast-augmentation">Breast Augmentation</option>
+                            <option value="breast-lift">Breast Lift</option>
+                            <option value="breast-reduction">Breast Reduction</option>
+                            <option value="facelift">Facelift</option>
+                            <option value="rhinoplasty">Rhinoplasty</option>
+                            <option value="brow-lift">Brow Lift</option>
+                            <option value="liposuction">Liposuction</option>
+                            <option value="tummy-tuck">Tummy Tuck</option>
+                            <option value="mommy-makeover">Mommy Makeover</option>
+                            <option value="brazilian-butt-lift">Brazilian Butt Lift</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-white text-black font-medium text-sm rounded-lg py-3 hover:bg-neutral-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                        Submit Request
+                    </button>
+                    <p class="text-[10px] text-neutral-500 text-center mt-3">
+                        By submitting, you agree to our privacy policy. Your information is secure.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Form Submission Logic for Webhook
+        document.getElementById('consultationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+
+            // Loading State
+            btn.disabled = true;
+            btn.innerText = "Sending...";
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                await fetch('https://maruti21.app.n8n.cloud/webhook/esthetica', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                // Success State
+                btn.innerText = "Request Sent!";
+                btn.classList.add('bg-green-500', 'text-white');
+                btn.classList.remove('bg-white', 'text-black');
+                
+                setTimeout(() => {
+                    toggleModal(false);
+                    setTimeout(() => {
+                        this.reset();
+                        btn.disabled = false;
+                        btn.innerText = originalText;
+                        btn.classList.remove('bg-green-500', 'text-white');
+                        btn.classList.add('bg-white', 'text-black');
+                    }, 500);
+                }, 1500);
+
+            } catch (error) {
+                console.error('Error:', error);
+                btn.innerText = "Error. Try again.";
+                btn.disabled = false;
+            }
+        });
+
+        // Modal Logic
+        function toggleModal(show) {
+            const modal = document.getElementById('booking-modal');
+            const backdrop = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+            
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    backdrop.classList.remove('opacity-0');
+                    content.classList.remove('scale-95', 'opacity-0');
+                    content.classList.add('scale-100', 'opacity-100');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                backdrop.classList.add('opacity-0');
+                content.classList.remove('scale-100', 'opacity-100');
+                content.classList.add('scale-95', 'opacity-0');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const backdrop = document.getElementById('mobile-backdrop');
+            
+            menu.classList.toggle('open');
+            backdrop.classList.toggle('hidden');
+            document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Testimonial Switcher Logic
+        document.querySelectorAll('.t-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.t-btn').forEach(b => {
+                    b.classList.remove('border-violet-500', 'opacity-100');
+                    b.classList.add('border-transparent', 'opacity-50');
+                });
+                btn.classList.remove('border-transparent', 'opacity-50');
+                btn.classList.add('border-violet-500', 'opacity-100');
+
+                const textEl = document.getElementById('quote-text');
+                const authorEl = document.getElementById('quote-author');
+                
+                textEl.style.opacity = '0';
+                authorEl.style.opacity = '0';
+
+                setTimeout(() => {
+                    textEl.textContent = `"${btn.dataset.quote}"`;
+                    authorEl.querySelector('p:first-child').textContent = btn.dataset.author;
+                    authorEl.querySelector('p:last-child').textContent = btn.dataset.role;
+                    
+                    textEl.style.opacity = '1';
+                    authorEl.style.opacity = '1';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
