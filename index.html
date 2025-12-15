@@ -1,463 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="antialiased">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esthetica Orange County | Modern Redesign</title>
+    <title>Esthetica Orange County | Artistry in Plastic Surgery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <style>
-        /* --- 2025 VARIABLE SYSTEM --- */
+        /* --- ESTHETICA TAUPE THEME --- */
         :root {
-            --bg-color: #FDFCF8; /* Soft Cream */
-            --text-main: #2C2C2C; /* Soft Charcoal */
-            --text-muted: #666666;
-            --accent-gold: #D4AF37; /* Champagne Gold */
-            --accent-soft: #F2E8D5; /* Pale Beige */
-            --dark-green: #1A281F; /* Deep Forest (Luxury Anchor) */
-            
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --blur: 12px;
-            
-            --font-serif: 'Playfair Display', serif;
-            --font-sans: 'Manrope', sans-serif;
+            --bg-main: #F2F0EB;       /* Light Taupe/Stone */
+            --bg-card: #FFFFFF;       /* Clean White */
+            --text-primary: #2C2A26;  /* Deep Warm Charcoal */
+            --text-secondary: #6B665F;/* Muted Earth Tone */
+            --accent-gold: #C6A87C;   /* Muted Gold */
+            --accent-glow: rgba(198, 168, 124, 0.2);
+            --border-soft: rgba(44, 42, 38, 0.08);
         }
 
-        /* --- RESET & BASE --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            font-family: 'Manrope', sans-serif;
         }
 
         h1, h2, h3, h4 {
-            font-family: var(--font-serif);
-            font-weight: 400;
-            line-height: 1.2;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-
-        /* --- UTILITIES --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--dark-green);
-            color: #fff;
-            border: 1px solid var(--dark-green);
-        }
-
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--dark-green);
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            border: 1px solid var(--text-main);
-            color: var(--text-main);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--text-main);
-            color: #fff;
-        }
-
-        /* --- NAVIGATION (Glassmorphism) --- */
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 1200px;
-            padding: 1rem 2rem;
-            background: var(--glass-bg);
-            backdrop-filter: blur(var(--blur));
-            -webkit-backdrop-filter: blur(var(--blur));
-            border: 1px solid var(--glass-border);
-            border-radius: 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.7;
-        }
-
-        .nav-links a:hover { opacity: 1; color: var(--accent-gold); }
-
-        .book-btn {
-            background: var(--dark-green);
-            color: #fff;
-            padding: 0.6rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-        }
-
-        /* --- HERO SECTION (Cinematic) --- */
-        .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        /* Simulating Video Background with animated gradient for code demo */
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%); 
-            background-size: 400% 400%;
-            z-index: -1;
-            /* Placeholder for actual video */
-            background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(2px);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            z-index: 2;
-            animation: fadeIn Up 1.5s ease-out;
-        }
-
-        .hero-subtitle {
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-            color: var(--dark-green);
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-green);
-        }
-        
-        .hero h1 span {
-            font-style: italic;
-            color: var(--accent-gold);
-        }
-
-        /* --- BENTO GRID SERVICES --- */
-        .services {
-            padding: 8rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-header h2 {
-            font-size: 3rem;
-            color: var(--dark-green);
-        }
-
-        /* The Bento Grid */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 350px);
-            gap: 20px;
-        }
-
-        .bento-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            background: #fff;
-            transition: transform 0.4s ease;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-        }
-
-        .bento-item:hover {
-            transform: scale(0.98);
-        }
-
-        .bento-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-        
-        .bento-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .bento-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 2rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            color: white;
-        }
-
-        .bento-overlay h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Grid Spans for Asymmetry */
-        .item-1 { grid-column: span 2; } /* Face - Large */
-        .item-2 { grid-column: span 1; } /* Body */
-        .item-3 { grid-column: span 1; } /* Breast */
-        .item-4 { grid-column: span 1; } /* MedSpa */
-        .item-5 { grid-column: span 3; } /* Featured/Philosophy - Wide */
-
-        /* --- DOCTOR PROFILE (Editorial Style) --- */
-        .doctor-profile {
-            padding: 6rem 0;
-            background-color: var(--accent-soft);
-        }
-
-        .profile-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .profile-img-wrapper {
-            position: relative;
-        }
-        
-        .profile-img {
-            width: 100%;
-            border-radius: 20px 0 20px 0; /* Modern asymmetrical corner */
-            box-shadow: 20px 20px 0px rgba(0,0,0,0.1);
-        }
-
-        .profile-text h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-green);
-        }
-
-        .profile-text p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .signature {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-style: italic;
-            color: var(--accent-gold);
+            color: var(--text-primary);
         }
 
-        /* --- FLOATING CTA --- */
-        .floating-cta {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            z-index: 999;
-            cursor: pointer;
-            border: 1px solid var(--accent-soft);
+        /* Subtle Grid Background (Darker lines for light theme) */
+        .grid-lines {
+            background-image: linear-gradient(to right, rgba(44, 42, 38, 0.03) 1px, transparent 1px);
+            background-size: 16.66% 100%;
         }
 
-        .avatar-bubble {
-            width: 40px;
-            height: 40px;
-            background: #eee;
-            border-radius: 50%;
-            background-image: url('https://randomuser.me/api/portraits/women/44.jpg');
-            background-size: cover;
+        /* Animations */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px) scale(0.98); filter: blur(4px); }
+            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
         }
+        .animate-on-scroll { animation-play-state: paused !important; }
+        .animate-on-scroll.animate { animation-play-state: running !important; }
 
-        .cta-text p {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-main);
+        /* Custom Scrollbar hide */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Gradient Border Utility */
+        .gold-border {
+            position: relative;
         }
-        .cta-text span {
-            font-size: 0.7rem;
-            color: var(--accent-gold);
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 3rem; }
-            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .item-1, .item-2, .item-3, .item-4, .item-5 { grid-column: span 1; height: 300px; }
-            .profile-layout { grid-template-columns: 1fr; }
-            nav { width: 95%; padding: 1rem; }
-            .nav-links { display: none; } /* Simplified for demo */
+        .gold-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: inherit;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            background: linear-gradient(to bottom, var(--accent-gold), transparent);
+            pointer-events: none;
         }
     </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll(".animate-on-scroll").forEach((el) => observer.observe(el));
+        });
+    </script>
 </head>
-<body>
 
-    <nav>
-        <div class="logo">ESTHETICA <span style="font-size:0.5em; display:block; letter-spacing: 2px; font-family:var(--font-sans)">ORANGE COUNTY</span></div>
-        <ul class="nav-links">
-            <li><a href="#">Face</a></li>
-            <li><a href="#">Body</a></li>
-            <li><a href="#">Breast</a></li>
-            <li><a href="#">MedSpa</a></li>
-            <li><a href="#">About Dr. Kouli</a></li>
-        </ul>
-        <a href="#" class="book-btn">Book Consultation</a>
-    </nav>
+<body class="relative min-h-screen overflow-x-hidden pt-32 selection:bg-[#C6A87C] selection:text-white">
 
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <p class="hero-subtitle">Refined. Natural. Timeless.</p>
-            <h1>The Art of <br><span>Subtle Transformation</span></h1>
-            <p style="margin-bottom: 2rem; font-size: 1.1rem;">Experience the intersection of surgical precision and artistic vision in Newport Beach.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="#" class="btn btn-primary">View Procedures</a>
-                <a href="#" class="btn btn-outline">Meet Dr. Kouli</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="services container">
-        <div class="section-header">
-            <h2>Curated Aesthetics</h2>
-            <p>Select your area of interest</p>
-        </div>
-        
-        <div class="bento-grid">
-            <div class="bento-item item-1">
-                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop" alt="Facial Procedures">
-                <div class="bento-overlay">
-                    <h3>Face</h3>
-                    <p>Facelift, Rhinoplasty, Eyelid Surgery</p>
-                </div>
-            </div>
-            
-            <div class="bento-item item-2">
-                <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=2070&auto=format&fit=crop" alt="Body Contouring">
-                <div class="bento-overlay">
-                    <h3>Body</h3>
-                    <p>Liposuction, Tummy Tuck</p>
-                </div>
-            </div>
-
-            <div class="bento-item item-3">
-                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=2070&auto=format&fit=crop" alt="Breast Surgery">
-                <div class="bento-overlay">
-                    <h3>Breast</h3>
-                    <p>Augmentation, Lift, Reduction</p>
-                </div>
-            </div>
-
-            <div class="bento-item item-4">
-                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" alt="Non-Surgical">
-                <div class="bento-overlay">
-                    <h3>MedSpa</h3>
-                    <p>Injectables, Lasers, Peels</p>
-                </div>
-            </div>
-
-            <div class="bento-item item-5">
-                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop" alt="Clinic Interior">
-                <div class="bento-overlay">
-                    <h3>The Esthetica Standard</h3>
-                    <p>Discover our private, state-of-the-art facility in Orange County.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="doctor-profile">
-        <div class="container profile-layout">
-            <div class="profile-img-wrapper">
-                <img src="https://estheticaorangecounty.com/wp-content/uploads/2021/04/dr-kouli-home-1.jpg" class="profile-img" alt="Dr. Wael Kouli">
-            </div>
-            <div class="profile-text">
-                <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--dark-green);">Board Certified Plastic Surgeon</p>
-                <h2>Dr. Wael Kouli</h2>
-                <p>
-                    "I believe that true beauty lies in harmony. My approach to plastic surgery is not to change who you are, but to restore the most refreshed, confident version of yourself."
-                </p>
-                <div class="signature">Wael Kouli, MD</div>
-                <br><br>
-                <a href="#" class="btn btn-outline">Read Full Bio</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="floating-cta">
-        <div class="avatar-bubble"></div>
-        <div class="cta-text">
-            <p>Esthetica Concierge</p>
-            <span>Online • Ask about pricing</span>
-        </div>
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute inset-0 mx-auto max-w-7xl grid-lines border-r border-l border-stone-400/[0.1]"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--accent-glow),_transparent_70%)] opacity-60 blur-3xl"></div>
     </div>
 
-</body>
-</html>
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0s_both] animate">
+        <nav class="flex w-full max-w-5xl items-center justify-between rounded-full border border-stone-200/60 bg-[#F2F0EB]/90 p-2 pl-6 shadow-xl backdrop-blur-xl ring-1 ring-white/40">
+            
+            <div class="font-serif text-xl font-bold tracking-tight text-[#2C2A26]">ESTHETICA <span class="text-xs font-sans font-light tracking-widest uppercase ml-1">OC</span></div>
+
+            <div class="hidden md:flex items-center gap-8 text-xs font-medium text-[#6B665F]">
+                <a href="#" class="hover:text-[#C6A87C] transition-colors">Face</a>
+                <a href="#" class="hover:text-[#C6A87C] transition-colors">Body</a>
+                <a href="#" class="hover:text-[#C6A87C] transition-colors">Breast</a>
+                <a href="#" class="hover:text-[#C6A87C] transition-colors">MedSpa</a>
+                <a href="#" class="hover:text-[#C6A87C] transition-colors">Dr. Kouli</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button class="p-2 text-[#6B665F] hover:text-[#2C2A26] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <button class="group relative flex items-center gap-2 rounded-full bg-[#2C2A26] px-5 py-2.5 text-xs font-medium text-white transition-all hover:bg-[#1a1917] hover:shadow-lg">
+                    <span>Book Consult</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7l-7 7"/></svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <main class="max-w-7xl mr-auto ml-auto pt-12 pr-6 pb-32 pl-6 relative">
+        
+        <div class="mx-auto mb-24 max-w-4xl text-center">
+            <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.1s_both] mb-8 inline-flex items-center gap-2 rounded-full border border-[#C6A87C]/30 bg-[#C6A87C]/10 px-4 py-1.5 text-[10px] font-medium uppercase tracking-wider text-[#8A7045] animate">
+                <span class="relative flex h-1.5 w-1.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6A87C] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#C6A87C]"></span>
+                </span>
+                Now Accepting New Patients
+            </div>
+
+            <h1 class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.2s_both] mb-6 text-5xl md:text-7xl font-medium leading-[1.0] tracking-tight text-[#2C2A26] animate">
+                Artistry Crafted for <br>
+                <span class="text-[#8e8880] italic font-light">Natural Beauty.</span>
+            </h1>
+
+            <p class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.3s_both] mx-auto mb-10 max-w-xl text-lg font-light leading-relaxed text-[#6B665F] animate">
+                Discover Newport Beach's premier destination for facial rejuvenation and body contouring, where surgical precision meets artistic vision.
+            </p>
+
+            <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.4s_both] flex flex-col items-center justify-center gap-4 animate">
+                <button class="group relative flex items-center gap-2 rounded-full bg-white text-[#2C2A26] px-8 py-3.5 text-sm font-medium transition-all hover:bg-[#fafafa] shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-stone-100">
+                    <span class="">View Procedures</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="transition-transform group-hover:translate-x-0.5"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8 mb-32 relative gap-x-6 gap-y-6">
+            
+            <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.5s_both] relative md:col-span-8 h-[450px] md:h-[550px] group overflow-hidden rounded-3xl bg-white shadow-sm animate transition-all">
+                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" alt="Facial Aesthetics" class="transition-transform duration-700 group-hover:scale-105 opacity-100 w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0">
+                
+                <div class="bg-gradient-to-t from-[#2C2A26]/80 via-transparent to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+
+                <div class="absolute bottom-0 left-0 p-10 w-full">
+                    <div class="flex items-center gap-2 text-white/90 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+                        <span class="text-xs font-semibold uppercase tracking-widest">
+                            Board Certified
+                        </span>
+                    </div>
+                    <h3 class="text-3xl font-serif text-white mb-2">
+                        Facial Rejuvenation
+                    </h3>
+                    <p class="text-white/80 text-sm max-w-md font-light">
+                        Deep plane facelifts, blepharoplasty, and rhinoplasty designed for undetectable, natural results.
+                    </p>
+                </div>
+            </div>
+
+            <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.6s_both] md:col-span-4 flex flex-col z-10 animate gap-6">
+                
+                <div class="flex-1 overflow-hidden group bg-white rounded-3xl p-8 relative shadow-sm border border-stone-100 hover:shadow-md transition-all">
+                    <div class="bg-[url(https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop)] bg-cover bg-center absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700"></div>
+                    
+                    <div class="z-10 flex flex-col h-full relative justify-between">
+                        <div class="p-3 bg-[#F2F0EB] w-fit rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C2A26" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-serif text-[#2C2A26] mb-2">Body Contouring</h3>
+                            <p class="text-sm text-[#6B665F]">Liposuction 360, Mommy Makeovers & Tummy Tucks.</p>
+                            <div class="h-px w-full bg-[#2C2A26]/10 my-4"></div>
+                            <div class="flex justify-between items-center cursor-pointer">
+                                <span class="text-xs font-bold uppercase tracking-wider text-[#2C2A26]">Learn More</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-[#2C2A26]"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 overflow-hidden group bg-white rounded-3xl p-8 relative shadow-sm border border-stone-100 hover:shadow-md transition-all">
+                    <div class="bg-[url(https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop)] bg-cover bg-center absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700"></div>
+
+                    <div class="z-10 flex flex-col h-full relative justify-between">
+                        <div class="p-3 bg-[#F2F0EB] w-fit rounded-xl">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C2A26" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5-2 4-2 4 2 4 2"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-serif text-[#2C2A26] mb-2">Breast Surgery</h3>
+                            <p class="text-sm text-[#6B665F]">Augmentation, Lift & Reduction specialized procedures.</p>
+                            <div class="h-px w-full bg-[#2C2A26]/10 my-4"></div>
+                            <div class="flex justify-between items-center cursor-pointer">
+                                <span class="text-xs font-bold uppercase tracking-wider text-[#2C2A26]">Learn More</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-[#2C2A26]"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.7s_both] mb-24">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="group flex items-center gap-3 rounded-full border border-[#2C2A26]/5 bg-white px-6 py-3 hover:border-[#C6A87C] transition-colors shadow-sm">
+                    <span class="text-sm text-[#2C2A26] font-medium">Injectables</span>
+                </button>
+                <button class="group flex items-center gap-3 rounded-full border border-[#2C2A26]/5 bg-white px-6 py-3 hover:border-[#C6A87C] transition-colors shadow-sm">
+                    <span class="text-sm text-[#2C2A26] font-medium">Laser Treatments</span>
+                </button>
+                <button class="group flex items-center gap-3 rounded-full border border-[#2C2A26]/5 bg-white px-6 py-3 hover:border-[#C6A87C] transition-colors shadow-sm">
+                    <span class="text-sm text-[#2C2A26] font-medium">Skin Health</span>
+                </button>
+                <button class="group flex items-center gap-3 rounded-full border border-[#2C2A26]/5 bg-white px-6 py-3 hover:border-[#C6A87C] transition-colors shadow-sm">
+                    <span class="text-sm text-[#2C2A26] font-medium">For Men</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="relative border-t border-[#2C2A26]/5 bg-white py-32 overflow-hidden">
+        
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#C6A87C]/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.2s_both]">
+                    <div class="inline-flex items-center gap-2 rounded-full border border-[#2C2A26]/10 bg-[#F2F0EB] px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-[#2C2A26] mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        Esthetica Rapid Recovery
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-5xl font-serif text-[#2C2A26] mb-6">
+                        Minimal Downtime. <br>
+                        <span class="text-[#C6A87C] italic">Maximum Impact.</span>
+                    </h2>
+                    
+                    <p class="leading-relaxed font-light text-[#6B665F] max-w-lg mb-8">
+                        Our proprietary surgical protocols reduce swelling and accelerate healing, getting you back to your life 40% faster than industry standards.
+                    </p>
+
+                    <div class="relative w-full rounded-3xl border border-[#2C2A26]/5 bg-[#F9F8F6] p-8 mb-8 shadow-sm">
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <div class="text-xs font-bold text-[#2C2A26] uppercase tracking-wider">Recovery Timeline</div>
+                                <div class="text-[10px] text-[#6B665F] font-mono">Days Post-Op</div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex items-center gap-1.5">
+                                    <div class="w-2 h-2 rounded-full bg-[#C6A87C]"></div>
+                                    <span class="text-[10px] text-[#6B665F]">Esthetica Protocol</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <div class="w-2 h-2 rounded-full bg-[#d1d1d1]"></div>
+                                    <span class="text-[10px] text-[#6B665F]">Standard</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-[250px] w-full">
+                            <canvas id="recoveryChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 border-t border-[#2C2A26]/10 pt-6">
+                        <div>
+                            <div class="text-3xl font-serif text-[#2C2A26]">98<span class="text-sm font-sans text-[#6B665F] ml-1">%</span></div>
+                            <div class="text-[10px] text-[#6B665F] uppercase tracking-widest mt-1">Satisfaction</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-serif text-[#2C2A26]">20<span class="text-sm font-sans text-[#6B665F] ml-1">+</span></div>
+                            <div class="text-[10px] text-[#6B665F] uppercase tracking-widest mt-1">Years Exp.</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-serif text-[#2C2A26]">5<span class="text-sm font-sans text-[#6B665F] ml-1">k</span></div>
+                            <div class="text-[10px] text-[#6B665F] uppercase tracking-widest mt-1">Procedures</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.4s_both]">
+                    <div class="group relative overflow-hidden rounded-3xl bg-[#F2F0EB] aspect-[4/5] lg:aspect-square shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=2070&auto=format&fit=crop" alt="Spa Interior" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110">
+                        
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <div class="rounded-xl border border-white/40 bg-white/70 backdrop-blur-xl p-6 shadow-lg">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-3 rounded-full bg-[#C6A87C]/20 text-[#8A7045]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-[#2C2A26] mb-1">Safety First Facility</h4>
+                                        <p class="text-xs text-[#6B665F] leading-relaxed">
+                                            Fully accredited surgical suites equipped
