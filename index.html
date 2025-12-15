@@ -1,307 +1,509 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esthetica Orange County | Artistry in Plastic Surgery</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <title>Esthetica — Artistry in Plastic Surgery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
-    <style>
-        /* --- ESTHETICA TAUPE THEME --- */
-        :root {
-            --bg-main: #F2F0EB;       /* Light Taupe/Stone */
-            --bg-card: #FFFFFF;       /* Clean White */
-            --text-primary: #2C2A26;  /* Deep Warm Charcoal */
-            --text-secondary: #6B665F;/* Muted Earth Tone */
-            --accent-gold: #C6A87C;   /* Muted Gold */
-            --accent-glow: rgba(198, 168, 124, 0.2);
-            --border-soft: rgba(44, 42, 38, 0.08);
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        manrope: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
         }
-
+    </script>
+    <style>
         body {
-            background-color: var(--bg-main);
-            color: var(--text-secondary);
+            font-family: 'Inter', ui-sans-serif, system-ui;
+        }
+        .font-manrope {
             font-family: 'Manrope', sans-serif;
         }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            color: var(--text-primary);
-        }
-
-        /* Subtle Grid Background (Darker lines for light theme) */
-        .grid-lines {
-            background-image: linear-gradient(to right, rgba(44, 42, 38, 0.03) 1px, transparent 1px);
-            background-size: 16.66% 100%;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px) scale(0.98); filter: blur(4px); }
-            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-        }
-        .animate-on-scroll { animation-play-state: paused !important; }
-        .animate-on-scroll.animate { animation-play-state: running !important; }
-
-        /* Custom Scrollbar hide */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Gradient Border Utility */
-        .gold-border {
-            position: relative;
-        }
-        .gold-border::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            padding: 1px;
-            border-radius: inherit;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            background: linear-gradient(to bottom, var(--accent-gold), transparent);
-            pointer-events: none;
-        }
     </style>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("animate");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll(".animate-on-scroll").forEach((el) => observer.observe(el));
-        });
-    </script>
 </head>
+<body class="antialiased bg-gradient-to-b from-slate-50 via-white to-white text-slate-900">
+    <div class="relative min-h-screen overflow-hidden">
+        <!-- Ambient gradient orbs -->
+        <div class="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-fuchsia-300/40 via-pink-300/30 to-indigo-300/40 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-32 -left-16 h-[28rem] w-[28rem] rounded-full bg-gradient-to-tr from-sky-300/30 via-violet-300/30 to-rose-300/30 blur-3xl"></div>
 
-<body class="relative min-h-screen overflow-x-hidden pt-32 selection:bg-[#C6A87C] selection:text-white">
+        <!-- Header -->
+        <header class="relative">
+            <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-5 sm:px-6 lg:px-8">
+                <!-- Brand -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="flex h-9 w-9 bg-gradient-to-br from-pink-200 via-rose-400 to-red-700 rounded-xl items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white">
+                            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-base font-semibold tracking-tight">Esthetica</span>
+                </a>
 
-    <div class="fixed inset-0 pointer-events-none z-0">
-        <div class="absolute inset-0 mx-auto max-w-7xl grid-lines border-r border-l border-stone-400/[0.1]"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--accent-glow),_transparent_70%)] opacity-60 blur-3xl"></div>
-    </div>
+                <!-- Desktop Nav -->
+                <nav class="hidden items-center gap-8 md:flex">
+                    <div class="relative group">
+                        <button class="text-sm font-medium text-slate-600 hover:text-slate-900 transition flex items-center gap-1">
+                            Procedures
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-2xl shadow-xl border border-slate-200/70 p-2">
+                            <div class="py-2 px-3 text-xs font-medium text-slate-400 uppercase tracking-wider">Face</div>
+                            <a href="facelift.html" class="block px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition">Facelift</a>
+                            <a href="rhinoplasty.html" class="block px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition">Rhinoplasty</a>
+                            <a href="brow-lift.html" class="block px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition">Brow Lift</a>
+                            <div class="py-2 px-3 text-xs font-medium text-slate-400 uppercase tracking-wider mt-2">Body</div>
+                            <a href="liposuction.html" class="block px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition">Liposuction</a>
+                            <a href="tummy-tuck.html" class="block px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition">Tummy Tuck</a>
+                            <a href="mommy-makeover.html" class="block px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition">Mommy Makeover</a>
+                            <div class="border-t border-slate-200 mt-2 pt-2">
+                                <a href="procedures.html" class="block px-3 py-2 text-sm text-rose-600 hover:bg-rose-50 rounded-lg transition font-medium">View All →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">About</a>
+                    <a href="dr-kouli.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Dr. Kouli</a>
+                    <a href="gallery.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Gallery</a>
+                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Contact</a>
+                </nav>
 
-    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0s_both] animate">
-        <nav class="flex w-full max-w-5xl items-center justify-between rounded-full border border-stone-200/60 bg-[#F2F0EB]/90 p-2 pl-6 shadow-xl backdrop-blur-xl ring-1 ring-white/40">
-            
-            <div class="font-serif text-xl font-bold tracking-tight text-[#2C2A26]">ESTHETICA <span class="text-xs font-sans font-light tracking-widest uppercase ml-1">OC</span></div>
-
-            <div class="hidden md:flex items-center gap-8 text-xs font-medium text-[#6B665F]">
-                <a href="#" class="hover:text-[#C6A87C] transition-colors">Face</a>
-                <a href="#" class="hover:text-[#C6A87C] transition-colors">Body</a>
-                <a href="#" class="hover:text-[#C6A87C] transition-colors">Breast</a>
-                <a href="#" class="hover:text-[#C6A87C] transition-colors">MedSpa</a>
-                <a href="#" class="hover:text-[#C6A87C] transition-colors">Dr. Kouli</a>
+                <!-- Actions -->
+                <div class="flex items-center gap-2">
+                    <a href="tel:9497211113" class="hidden rounded-full border border-slate-200/80 px-3.5 py-2 text-sm font-medium text-slate-700 hover:bg-white/60 md:flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        (949) 721-1113
+                    </a>
+                    <button onclick="toggleModal(true)" class="inline-flex gap-2 hover:bg-slate-800 text-sm font-medium text-white bg-slate-900 rounded-full px-4 py-2 shadow-lg items-center">
+                        Book Consultation
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
+        </header>
 
-            <div class="flex items-center gap-2">
-                <button class="p-2 text-[#6B665F] hover:text-[#2C2A26] transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </button>
-                <button class="group relative flex items-center gap-2 rounded-full bg-[#2C2A26] px-5 py-2.5 text-xs font-medium text-white transition-all hover:bg-[#1a1917] hover:shadow-lg">
-                    <span>Book Consult</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7l-7 7"/></svg>
-                </button>
-            </div>
-        </nav>
-    </div>
+        <!-- Hero -->
+        <section class="relative">
+            <div class="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4 pb-8">
+                <div class="grid gap-10 pt-4 md:grid-cols-12 md:gap-8 md:pt-8">
+                    <!-- Heading -->
+                    <div class="md:col-span-7 lg:col-span-8">
+                        <h1 class="leading-tight text-5xl sm:text-6xl lg:text-7xl font-light text-slate-900 tracking-tight font-manrope">
+                            <span class="block bg-clip-text font-light text-transparent bg-gradient-to-r from-rose-400 via-pink-500 to-red-500 pb-4">Artistry in Form</span>
+                            <span class="block bg-clip-text font-light text-transparent bg-gradient-to-r from-rose-400 via-pink-500 to-gray-500 pb-4">Confidence in Life</span>
+                        </h1>
 
-    <main class="max-w-7xl mr-auto ml-auto pt-12 pr-6 pb-32 pl-6 relative">
-        
-        <div class="mx-auto mb-24 max-w-4xl text-center">
-            <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.1s_both] mb-8 inline-flex items-center gap-2 rounded-full border border-[#C6A87C]/30 bg-[#C6A87C]/10 px-4 py-1.5 text-[10px] font-medium uppercase tracking-wider text-[#8A7045] animate">
-                <span class="relative flex h-1.5 w-1.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6A87C] opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#C6A87C]"></span>
-                </span>
-                Now Accepting New Patients
-            </div>
+                        <div class="mt-6 flex items-center gap-4 text-sm text-slate-600">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-violet-600">
+                                    <circle cx="12" cy="8" r="6"></circle>
+                                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                                </svg>
+                                Board Certified
+                            </div>
+                            <div class="h-px w-24 bg-slate-200"></div>
+                            <div>Newport Beach, CA</div>
+                        </div>
+                    </div>
 
-            <h1 class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.2s_both] mb-6 text-5xl md:text-7xl font-medium leading-[1.0] tracking-tight text-[#2C2A26] animate">
-                Artistry Crafted for <br>
-                <span class="text-[#8e8880] italic font-light">Natural Beauty.</span>
-            </h1>
+                    <!-- Subcopy + CTA -->
+                    <div class="md:col-span-5 lg:col-span-4">
+                        <p class="text-base leading-relaxed text-slate-600">
+                            Experience world-class cosmetic surgery and aesthetic medicine tailored to your unique beauty. Dr. Kouli combines surgical precision with an artistic eye for natural, transformative results.
+                        </p>
+                        <div class="mt-6 flex items-center gap-3">
+                            <a href="gallery.html" class="inline-flex gap-2 hover:bg-slate-50 text-sm font-medium text-slate-900 bg-white border-slate-200/80 border rounded-full px-4 py-2 shadow-lg items-center">
+                                View Gallery
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <a href="about.html" class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900">
+                                Our Philosophy
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                    <path d="M12 7v14"></path>
+                                    <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-            <p class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.3s_both] mx-auto mb-10 max-w-xl text-lg font-light leading-relaxed text-[#6B665F] animate">
-                Discover Newport Beach's premier destination for facial rejuvenation and body contouring, where surgical precision meets artistic vision.
-            </p>
+                <!-- Procedure Cards -->
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-10">
+                    <!-- Card 1: Facial Rejuvenation -->
+                    <article class="relative overflow-hidden rounded-3xl bg-gradient-to-b from-white to-slate-50 p-4 shadow-sm ring-1 ring-slate-200/70">
+                        <div class="flex items-start justify-between">
+                            <span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-600">Face</span>
+                            <a href="face-procedures.html" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200/80 bg-white text-slate-700 hover:bg-slate-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold tracking-tight text-slate-900">Facial Rejuvenation</h3>
+                        <p class="mt-1 text-sm text-slate-600">Restore youthful contours with surgical precision and non-surgical enhancements.</p>
+                        <div class="mt-4 overflow-hidden rounded-2xl">
+                            <img alt="Natural facial radiance - soft, glowing skin with warm natural lighting" class="aspect-[3/4] w-full object-cover" src="./images/facial-rejuvenation.png">
+                        </div>
+                    </article>
 
-            <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.4s_both] flex flex-col items-center justify-center gap-4 animate">
-                <button class="group relative flex items-center gap-2 rounded-full bg-white text-[#2C2A26] px-8 py-3.5 text-sm font-medium transition-all hover:bg-[#fafafa] shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-stone-100">
-                    <span class="">View Procedures</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="transition-transform group-hover:translate-x-0.5"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"></path></svg>
-                </button>
-            </div>
-        </div>
+                    <!-- Card 2: Body Contouring -->
+                    <article class="relative overflow-hidden ring-1 ring-slate-200/70 bg-gradient-to-b from-white to-sky-50 rounded-3xl p-4 shadow-sm">
+                        <div class="flex items-start justify-between">
+                            <span class="inline-flex items-center rounded-full bg-sky-100 px-2.5 py-1 text-[11px] font-medium text-sky-700">Body</span>
+                            <a href="body-procedures.html" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200/80 bg-white text-slate-700 hover:bg-slate-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold tracking-tight text-slate-900">Body Contouring</h3>
+                        <p class="mt-1 text-sm text-slate-600">Sculpt and define your silhouette with advanced liposuction and lifting techniques.</p>
+                        <div class="mt-4 overflow-hidden rounded-2xl">
+                            <img alt="Abstract form" class="aspect-[3/4] w-full object-cover" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop">
+                        </div>
+                    </article>
 
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8 mb-32 relative gap-x-6 gap-y-6">
-            
-            <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.5s_both] relative md:col-span-8 h-[450px] md:h-[550px] group overflow-hidden rounded-3xl bg-white shadow-sm animate transition-all">
-                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" alt="Facial Aesthetics" class="transition-transform duration-700 group-hover:scale-105 opacity-100 w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0">
-                
-                <div class="bg-gradient-to-t from-[#2C2A26]/80 via-transparent to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+                    <!-- Card 3: Breast Enhancement -->
+                    <article class="relative overflow-hidden rounded-3xl bg-gradient-to-b from-white to-rose-50 p-4 shadow-sm ring-1 ring-slate-200/70">
+                        <div class="flex items-start justify-between">
+                            <span class="inline-flex items-center rounded-full bg-rose-100 px-2.5 py-1 text-[11px] font-medium text-rose-700">Breast</span>
+                            <a href="breast-procedures.html" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200/80 bg-white text-slate-700 hover:bg-slate-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold tracking-tight text-slate-900">Breast Enhancement</h3>
+                        <p class="mt-1 text-sm text-slate-600">Natural-looking results tailored to your body's unique proportions and goals.</p>
+                        <div class="mt-4 overflow-hidden rounded-2xl">
+                            <img alt="Soft curves" class="aspect-[3/4] w-full object-cover" src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=2070&auto=format&fit=crop">
+                        </div>
+                    </article>
+                </div>
 
-                <div class="absolute bottom-0 left-0 p-10 w-full">
-                    <div class="flex items-center gap-2 text-white/90 mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
-                        <span class="text-xs font-semibold uppercase tracking-widest">
+                <!-- Consultation Options -->
+                <div class="mt-16">
+                    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                        <div>
+                            <span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-600">Consultations</span>
+                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">Your journey begins here</h2>
+                            <p class="mt-2 text-sm text-slate-600">Choose the path that best fits your goals. Transparent care, always.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Grid -->
+                    <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        <!-- Non-Surgical -->
+                        <article class="relative overflow-hidden rounded-3xl bg-gradient-to-b from-white to-slate-50 p-6 shadow-sm ring-1 ring-slate-200/70">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-semibold tracking-tight text-slate-900">Non-Surgical</h3>
+                                <span class="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600">Aesthetics</span>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-3xl font-semibold tracking-tight text-slate-900">Refresh</span>
+                                </div>
+                                <p class="mt-1 text-sm text-slate-600">Minimally invasive treatments for immediate radiance.</p>
+                            </div>
+                            <ul class="mt-5 space-y-3">
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-600 mt-0.5">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                    Botox & Dermal Fillers
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-600 mt-0.5">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                    Laser Skin Resurfacing
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-600 mt-0.5">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                    Medical Grade Peels
+                                </li>
+                            </ul>
+                            <button onclick="toggleModal(true)" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50">
+                                Book Appointment
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </article>
+
+                        <!-- Surgical -->
+                        <article class="relative overflow-hidden rounded-3xl ring-1 ring-slate-200/70 bg-gradient-to-b from-white to-sky-50 p-6 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-semibold tracking-tight text-slate-900">Surgical</h3>
+                                <span class="inline-flex items-center gap-1 rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-medium text-sky-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5">
+                                        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                                    </svg>
+                                    Transformative
+                                </span>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-3xl font-semibold tracking-tight text-slate-900">Refine</span>
+                                </div>
+                                <p class="mt-1 text-sm text-slate-600">Comprehensive surgical solutions tailored to you.</p>
+                            </div>
+                            <ul class="mt-5 space-y-3">
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-600 mt-0.5">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                    Dr. Kouli Consultation
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-600 mt-0.5">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                    3D Simulation & Planning
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-600 mt-0.5">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                    Dedicated Care Coordinator
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-600 mt-0.5">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                    Post-Op Recovery Suite
+                                </li>
+                            </ul>
+                            <button onclick="toggleModal(true)" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800">
+                                Schedule Consult
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </article>
+
+                        <!-- VIP Concierge -->
+                        <article class="relative overflow-hidden rounded-3xl bg-gradient-to-b from-white to-violet-50 p-6 shadow-sm ring-1 ring-slate-200/70">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-semibold tracking-tight text-slate-900">VIP Concierge</h3>
+                                <span class="inline-flex items-center rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-medium text-violet-700">Exclusive</span>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-3xl font-semibold tracking-tight text-slate-900">Custom</span>
+                                </div>
+                                <p class="mt-1 text-sm text-slate-600">Private, expedited service for international clients.</p>
+                            </div>
+                            <ul class="mt-5 space-y-3">
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-violet-700 mt-0.5">
+                                        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+                                    </svg>
+                                    Travel & Accommodation
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-700 mt-0.5">
+                                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                                        <path d="m9 12 2 2 4-4"></path>
+                                    </svg>
+                                    Utmost Privacy & Security
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-slate-700 mt-0.5">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    After-hours Availability
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-slate-700 mt-0.5">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                    </svg>
+                                    Private Nursing Staff
+                                </li>
+                            </ul>
+                            <button onclick="toggleModal(true)" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50">
+                                Contact VIP Services
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </button>
+                        </article>
+                    </div>
+
+                    <p class="mt-4 text-xs text-slate-500">Financing options available through CareCredit and Alphaeon.</p>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="mx-auto mt-10 flex max-w-7xl flex-col items-start justify-between gap-4 border-t border-slate-200/70 pt-6 sm:flex-row sm:items-center">
+                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-600">
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        HIPAA Compliant Privacy
+                    </div>
+                    <div class="flex items-center gap-6 text-sm text-slate-600">
+                        <span class="inline-flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-violet-600">
+                                <circle cx="12" cy="8" r="6"></circle>
+                                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                            </svg>
                             Board Certified
                         </span>
+                        <span class="inline-flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-rose-600">
+                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                            </svg>
+                            Patient Focused
+                        </span>
+                        <span class="inline-flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-indigo-600">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            Accredited Facility
+                        </span>
                     </div>
-                    <h3 class="text-3xl font-serif text-white mb-2">
-                        Facial Rejuvenation
-                    </h3>
-                    <p class="text-white/80 text-sm max-w-md font-light">
-                        Deep plane facelifts, blepharoplasty, and rhinoplasty designed for undetectable, natural results.
-                    </p>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.6s_both] md:col-span-4 flex flex-col z-10 animate gap-6">
-                
-                <div class="flex-1 overflow-hidden group bg-white rounded-3xl p-8 relative shadow-sm border border-stone-100 hover:shadow-md transition-all">
-                    <div class="bg-[url(https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop)] bg-cover bg-center absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700"></div>
-                    
-                    <div class="z-10 flex flex-col h-full relative justify-between">
-                        <div class="p-3 bg-[#F2F0EB] w-fit rounded-xl">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C2A26" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-serif text-[#2C2A26] mb-2">Body Contouring</h3>
-                            <p class="text-sm text-[#6B665F]">Liposuction 360, Mommy Makeovers & Tummy Tucks.</p>
-                            <div class="h-px w-full bg-[#2C2A26]/10 my-4"></div>
-                            <div class="flex justify-between items-center cursor-pointer">
-                                <span class="text-xs font-bold uppercase tracking-wider text-[#2C2A26]">Learn More</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-[#2C2A26]"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"></path></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div id="modal-content" class="relative w-full max-w-lg overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-2xl">
+            <button onclick="toggleModal(false)" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
 
-                <div class="flex-1 overflow-hidden group bg-white rounded-3xl p-8 relative shadow-sm border border-stone-100 hover:shadow-md transition-all">
-                    <div class="bg-[url(https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop)] bg-cover bg-center absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700"></div>
-
-                    <div class="z-10 flex flex-col h-full relative justify-between">
-                        <div class="p-3 bg-[#F2F0EB] w-fit rounded-xl">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C2A26" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5-2 4-2 4 2 4 2"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-serif text-[#2C2A26] mb-2">Breast Surgery</h3>
-                            <p class="text-sm text-[#6B665F]">Augmentation, Lift & Reduction specialized procedures.</p>
-                            <div class="h-px w-full bg-[#2C2A26]/10 my-4"></div>
-                            <div class="flex justify-between items-center cursor-pointer">
-                                <span class="text-xs font-bold uppercase tracking-wider text-[#2C2A26]">Learn More</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-[#2C2A26]"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"></path></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="mb-6">
+                <h3 class="text-2xl font-semibold tracking-tight text-slate-900">Book Your Consultation</h3>
+                <p class="text-sm text-slate-600 mt-2">We'll contact you within 24 hours to confirm your appointment.</p>
             </div>
+
+            <form id="consultationForm" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs font-medium text-slate-700 mb-1.5 block">First Name</label>
+                        <input type="text" name="firstName" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label class="text-xs font-medium text-slate-700 mb-1.5 block">Last Name</label>
+                        <input type="text" name="lastName" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-700 mb-1.5 block">Email</label>
+                    <input type="email" name="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition">
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-700 mb-1.5 block">Phone</label>
+                    <input type="tel" name="phone" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition">
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-700 mb-1.5 block">Procedure of Interest</label>
+                    <select name="procedure" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition">
+                        <option value="">Select a procedure...</option>
+                        <option value="breast-augmentation">Breast Augmentation</option>
+                        <option value="facelift">Facelift</option>
+                        <option value="rhinoplasty">Rhinoplasty</option>
+                        <option value="liposuction">Liposuction</option>
+                        <option value="mommy-makeover">Mommy Makeover</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-slate-900 text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-slate-800 transition shadow-lg mt-6">
+                    Submit Request
+                </button>
+                <p class="text-xs text-slate-500 text-center mt-3">
+                    Your information is secure and HIPAA compliant.
+                </p>
+            </form>
         </div>
+    </div>
 
-        <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.7s_both] mb-24">
-            <div class="flex flex-wrap gap-4 justify-center">
-                <button class="group flex items-center gap-3 rounded-full border border-[#2C2A26]/5 bg-white px-6 py-3 hover:border-[#C6A87C] transition-colors shadow-sm">
-                    <span class="text-sm text-[#2C2A26] font-medium">Injectables</span>
-                </button>
-                <button class="group flex items-center gap-3 rounded-full border border-[#2C2A26]/5 bg-white px-6 py-3 hover:border-[#C6A87C] transition-colors shadow-sm">
-                    <span class="text-sm text-[#2C2A26] font-medium">Laser Treatments</span>
-                </button>
-                <button class="group flex items-center gap-3 rounded-full border border-[#2C2A26]/5 bg-white px-6 py-3 hover:border-[#C6A87C] transition-colors shadow-sm">
-                    <span class="text-sm text-[#2C2A26] font-medium">Skin Health</span>
-                </button>
-                <button class="group flex items-center gap-3 rounded-full border border-[#2C2A26]/5 bg-white px-6 py-3 hover:border-[#C6A87C] transition-colors shadow-sm">
-                    <span class="text-sm text-[#2C2A26] font-medium">For Men</span>
-                </button>
-            </div>
-        </div>
+    <script>
+        // Form Submission
+        document.getElementById('consultationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.disabled = true;
+            btn.innerText = "Sending...";
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
 
-    </main>
-
-    <section class="relative border-t border-[#2C2A26]/5 bg-white py-32 overflow-hidden">
-        
-        <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#C6A87C]/10 blur-[120px] rounded-full pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            try {
+                await fetch('https://maruti21.app.n8n.cloud/webhook/esthetica', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
                 
-                <div class="animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.2s_both]">
-                    <div class="inline-flex items-center gap-2 rounded-full border border-[#2C2A26]/10 bg-[#F2F0EB] px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-[#2C2A26] mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        Esthetica Rapid Recovery
-                    </div>
-                    
-                    <h2 class="text-4xl md:text-5xl font-serif text-[#2C2A26] mb-6">
-                        Minimal Downtime. <br>
-                        <span class="text-[#C6A87C] italic">Maximum Impact.</span>
-                    </h2>
-                    
-                    <p class="leading-relaxed font-light text-[#6B665F] max-w-lg mb-8">
-                        Our proprietary surgical protocols reduce swelling and accelerate healing, getting you back to your life 40% faster than industry standards.
-                    </p>
+                btn.innerText = "Request Sent!";
+                btn.classList.add('bg-emerald-600');
+                btn.classList.remove('bg-slate-900');
+                
+                setTimeout(() => {
+                    toggleModal(false);
+                    setTimeout(() => {
+                        this.reset();
+                        btn.disabled = false;
+                        btn.innerText = originalText;
+                        btn.classList.remove('bg-emerald-600');
+                        btn.classList.add('bg-slate-900');
+                    }, 500);
+                }, 1500);
+            } catch (error) {
+                console.error('Error:', error);
+                btn.innerText = "Error. Try again.";
+                btn.disabled = false;
+            }
+        });
 
-                    <div class="relative w-full rounded-3xl border border-[#2C2A26]/5 bg-[#F9F8F6] p-8 mb-8 shadow-sm">
-                        <div class="flex justify-between items-center mb-6">
-                            <div>
-                                <div class="text-xs font-bold text-[#2C2A26] uppercase tracking-wider">Recovery Timeline</div>
-                                <div class="text-[10px] text-[#6B665F] font-mono">Days Post-Op</div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-2 h-2 rounded-full bg-[#C6A87C]"></div>
-                                    <span class="text-[10px] text-[#6B665F]">Esthetica Protocol</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-2 h-2 rounded-full bg-[#d1d1d1]"></div>
-                                    <span class="text-[10px] text-[#6B665F]">Standard</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="h-[250px] w-full">
-                            <canvas id="recoveryChart"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-4 border-t border-[#2C2A26]/10 pt-6">
-                        <div>
-                            <div class="text-3xl font-serif text-[#2C2A26]">98<span class="text-sm font-sans text-[#6B665F] ml-1">%</span></div>
-                            <div class="text-[10px] text-[#6B665F] uppercase tracking-widest mt-1">Satisfaction</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-serif text-[#2C2A26]">20<span class="text-sm font-sans text-[#6B665F] ml-1">+</span></div>
-                            <div class="text-[10px] text-[#6B665F] uppercase tracking-widest mt-1">Years Exp.</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-serif text-[#2C2A26]">5<span class="text-sm font-sans text-[#6B665F] ml-1">k</span></div>
-                            <div class="text-[10px] text-[#6B665F] uppercase tracking-widest mt-1">Procedures</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative animate-on-scroll [animation:fadeInUp_0.8s_ease-out_0.4s_both]">
-                    <div class="group relative overflow-hidden rounded-3xl bg-[#F2F0EB] aspect-[4/5] lg:aspect-square shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=2070&auto=format&fit=crop" alt="Spa Interior" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110">
-                        
-                        <div class="absolute bottom-8 left-8 right-8">
-                            <div class="rounded-xl border border-white/40 bg-white/70 backdrop-blur-xl p-6 shadow-lg">
-                                <div class="flex items-start gap-4">
-                                    <div class="p-3 rounded-full bg-[#C6A87C]/20 text-[#8A7045]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-sm font-bold text-[#2C2A26] mb-1">Safety First Facility</h4>
-                                        <p class="text-xs text-[#6B665F] leading-relaxed">
-                                            Fully accredited surgical suites equipped
+        // Modal Logic
+        function toggleModal(show) {
+            const modal = document.getElementById('booking-modal');
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+</body>
+</html>
