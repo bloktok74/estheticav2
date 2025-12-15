@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Esthetica Orange County</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', ui-sans-serif, system-ui;
+        }
+        .font-display {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .font-manrope {
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        /* Parallax Background Effect */
+        .parallax-bg {
+            background-image: url('./images/K5.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+        }
+        
+        /* Overlay to darken background for text readability */
+        .parallax-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(194,178,167,0.7));
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    
+    <!-- Fixed Header -->
+    <header class="fixed top-0 w-full border-b border-white/20 backdrop-blur-md bg-white/20 z-50">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-5 sm:px-6 lg:px-8">
+            <!-- Brand -->
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex h-9 w-9 bg-stone-900 rounded-xl items-center justify-center shadow-lg shadow-stone-900/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white">
+                        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                    </svg>
+                </div>
+                <span class="text-base font-display font-bold tracking-wider text-white">ESTHETICA</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden items-center gap-8 md:flex">
+                <a href="face.html" class="text-sm font-medium text-white/80 hover:text-white transition">Face</a>
+                <a href="body.html" class="text-sm font-medium text-white/80 hover:text-white transition">Body</a>
+                <a href="breast.html" class="text-sm font-medium text-white/80 hover:text-white transition">Breast</a>
+                <a href="men.html" class="text-sm font-medium text-white/80 hover:text-white transition">Men</a>
+                <a href="gallery.html" class="text-sm font-medium text-white bg-white/20 px-3 py-1.5 rounded-full transition">Gallery</a>
+                <a href="dr-kouli.html" class="text-sm font-medium text-white/80 hover:text-white transition">Dr. Kouli</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-2">
+                <a href="tel:9497211113" class="hidden rounded-full border border-white/40 bg-white/20 px-3.5 py-2 text-sm font-medium text-white hover:bg-white/30 md:flex items-center gap-2 transition-all backdrop-blur-sm shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Contact
+                </a>
+                <button class="inline-flex gap-2 hover:bg-stone-800 text-sm font-medium text-white bg-stone-900 rounded-full px-4 py-2 shadow-lg items-center transition-all">
+                    Book Consultation
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Parallax Background Section -->
+    <div class="parallax-bg">
+        <div class="parallax-overlay">
+            
+            <!-- Hero Content -->
+            <section class="pt-32 pb-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto">
+                        <span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-3 py-1 text-xs font-medium text-white border border-white/30 shadow-sm mb-6">
+                            Before & After Gallery
+                        </span>
+                        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight font-manrope mb-6">
+                            Transformative Results
+                        </h1>
+                        <p class="text-lg text-white/90 leading-relaxed">
+                            Witness the artistry and precision of Dr. Kouli's work through our comprehensive gallery of real patient results.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Grid Section -->
+            <section class="pb-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    
+                    <!-- Category Filter -->
+                    <div class="flex flex-wrap justify-center gap-3 mb-12">
+                        <button class="px-4 py-2 rounded-full bg-white text-stone-900 text-sm font-medium shadow-sm">All Procedures</button>
+                        <button class="px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-medium hover:bg-white/30 transition border border-white/30">Facial</button>
+                        <button class="px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-medium hover:bg-white/30 transition border border-white/30">Body</button>
+                        <button class="px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-medium hover:bg-white/30 transition border border-white/30">Breast</button>
+                        <button class="px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-medium hover:bg-white/30 transition border border-white/30">Non-Surgical</button>
+                    </div>
+
+                    <!-- Gallery Grid Placeholder -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Gallery Card 1 -->
+                        <div class="rounded-2xl bg-white/80 backdrop-blur-xl p-4 shadow-lg ring-1 ring-white/60">
+                            <div class="aspect-[4/3] bg-stone-200 rounded-xl mb-4 flex items-center justify-center">
+                                <span class="text-stone-400 text-sm">Before & After Image</span>
+                            </div>
+                            <h3 class="font-display font-bold text-stone-900 text-lg">Breast Augmentation</h3>
+                            <p class="text-sm text-stone-600 mt-1">Natural enhancement with silicone implants</p>
+                        </div>
+
+                        <!-- Gallery Card 2 -->
+                        <div class="rounded-2xl bg-white/80 backdrop-blur-xl p-4 shadow-lg ring-1 ring-white/60">
+                            <div class="aspect-[4/3] bg-stone-200 rounded-xl mb-4 flex items-center justify-center">
+                                <span class="text-stone-400 text-sm">Before & After Image</span>
+                            </div>
+                            <h3 class="font-display font-bold text-stone-900 text-lg">Facelift</h3>
+                            <p class="text-sm text-stone-600 mt-1">Comprehensive facial rejuvenation</p>
+                        </div>
+
+                        <!-- Gallery Card 3 -->
+                        <div class="rounded-2xl bg-white/80 backdrop-blur-xl p-4 shadow-lg ring-1 ring-white/60">
+                            <div class="aspect-[4/3] bg-stone-200 rounded-xl mb-4 flex items-center justify-center">
+                                <span class="text-stone-400 text-sm">Before & After Image</span>
+                            </div>
+                            <h3 class="font-display font-bold text-stone-900 text-lg">Rhinoplasty</h3>
+                            <p class="text-sm text-stone-600 mt-1">Refined nose contour with natural results</p>
+                        </div>
+
+                        <!-- Gallery Card 4 -->
+                        <div class="rounded-2xl bg-white/80 backdrop-blur-xl p-4 shadow-lg ring-1 ring-white/60">
+                            <div class="aspect-[4/3] bg-stone-200 rounded-xl mb-4 flex items-center justify-center">
+                                <span class="text-stone-400 text-sm">Before & After Image</span>
+                            </div>
+                            <h3 class="font-display font-bold text-stone-900 text-lg">Mommy Makeover</h3>
+                            <p class="text-sm text-stone-600 mt-1">Complete body transformation</p>
+                        </div>
+
+                        <!-- Gallery Card 5 -->
+                        <div class="rounded-2xl bg-white/80 backdrop-blur-xl p-4 shadow-lg ring-1 ring-white/60">
+                            <div class="aspect-[4/3] bg-stone-200 rounded-xl mb-4 flex items-center justify-center">
+                                <span class="text-stone-400 text-sm">Before & After Image</span>
+                            </div>
+                            <h3 class="font-display font-bold text-stone-900 text-lg">Liposuction</h3>
+                            <p class="text-sm text-stone-600 mt-1">Targeted fat removal & body sculpting</p>
+                        </div>
+
+                        <!-- Gallery Card 6 -->
+                        <div class="rounded-2xl bg-white/80 backdrop-blur-xl p-4 shadow-lg ring-1 ring-white/60">
+                            <div class="aspect-[4/3] bg-stone-200 rounded-xl mb-4 flex items-center justify-center">
+                                <span class="text-stone-400 text-sm">Before & After Image</span>
+                            </div>
+                            <h3 class="font-display font-bold text-stone-900 text-lg">Tummy Tuck</h3>
+                            <p class="text-sm text-stone-600 mt-1">Flatter, firmer abdominal contour</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="mt-16 text-center">
+                        <div class="rounded-3xl bg-white/80 backdrop-blur-xl p-8 sm:p-12 shadow-lg ring-1 ring-white/60 max-w-3xl mx-auto">
+                            <h2 class="text-3xl font-semibold tracking-tight text-stone-900 mb-4 font-display">Ready to Begin Your Transformation?</h2>
+                            <p class="text-stone-600 mb-8">
+                                Schedule a consultation with Dr. Kouli to discuss your aesthetic goals and see how we can help you achieve natural, beautiful results.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <button class="w-full sm:w-auto inline-flex gap-2 hover:bg-stone-800 text-sm font-medium text-white bg-stone-900 rounded-full px-6 py-3 shadow-lg items-center justify-center transition-all">
+                                    Book Consultation
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                                <a href="tel:9497211113" class="w-full sm:w-auto inline-flex gap-2 text-sm font-medium text-stone-900 bg-white border border-stone-200 rounded-full px-6 py-3 shadow-sm items-center justify-center hover:bg-stone-50 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                    Call (949) 721-1113
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="border-t border-white/20 backdrop-blur-md bg-white/10 py-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <p class="text-xs text-white/70">© 2025 Esthetica Orange County. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>
