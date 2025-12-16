@@ -761,7 +761,7 @@
             }
         }
 
-        // Modal Logic
+ // Modal Logic
         function toggleModal(show) {
             const modal = document.getElementById('booking-modal');
             const content = document.getElementById('modal-content');
@@ -782,6 +782,18 @@
                     modal.classList.add('hidden');
                 }, 300);
             }
+        }
+
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            menu.classList.toggle('-translate-y-full');
+            menu.classList.toggle('translate-y-0');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
         }
     </script>
 </body>
